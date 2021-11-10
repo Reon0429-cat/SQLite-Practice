@@ -17,6 +17,8 @@
 		AB799A38273B69E8000798F0 /* SQLite_PracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB799A37273B69E8000798F0 /* SQLite_PracticeUITests.swift */; };
 		AB799A3A273B69E8000798F0 /* SQLite_PracticeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB799A39273B69E8000798F0 /* SQLite_PracticeUITestsLaunchTests.swift */; };
 		AB799A47273B6C23000798F0 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB799A46273B6C23000798F0 /* Database.swift */; };
+		AB799A4A273C609C000798F0 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB799A48273C609C000798F0 /* CustomTableViewCell.swift */; };
+		AB799A4B273C609C000798F0 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB799A49273C609C000798F0 /* CustomTableViewCell.xib */; };
 		DE60A7F9CF0F004C740DB43F /* Pods_SQLite_PracticeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77AA8DAEA7D4833E73B6F102 /* Pods_SQLite_PracticeTests.framework */; };
 		E83006AE4F0E9F37C74D3919 /* Pods_SQLite_Practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823440826C9929B03E9FE6D9 /* Pods_SQLite_Practice.framework */; };
 		F5F412A3B891FF00CC7BCF41 /* Pods_SQLite_Practice_SQLite_PracticeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDD5C471F1C12B8B4CF631E3 /* Pods_SQLite_Practice_SQLite_PracticeUITests.framework */; };
@@ -60,6 +62,8 @@
 		AB799A37273B69E8000798F0 /* SQLite_PracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLite_PracticeUITests.swift; sourceTree = "<group>"; };
 		AB799A39273B69E8000798F0 /* SQLite_PracticeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLite_PracticeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AB799A46273B6C23000798F0 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		AB799A48273C609C000798F0 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		AB799A49273C609C000798F0 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		BC24726DF93558F984970474 /* Pods-SQLite-Practice-SQLite-PracticeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQLite-Practice-SQLite-PracticeUITests.debug.xcconfig"; path = "Target Support Files/Pods-SQLite-Practice-SQLite-PracticeUITests/Pods-SQLite-Practice-SQLite-PracticeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EDD5C471F1C12B8B4CF631E3 /* Pods_SQLite_Practice_SQLite_PracticeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SQLite_Practice_SQLite_PracticeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3FB21E0EC85842530645FAE /* Pods-SQLite-PracticeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQLite-PracticeTests.release.xcconfig"; path = "Target Support Files/Pods-SQLite-PracticeTests/Pods-SQLite-PracticeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 				AB799A16273B69E7000798F0 /* AppDelegate.swift */,
 				AB799A18273B69E7000798F0 /* SceneDelegate.swift */,
 				AB799A1A273B69E7000798F0 /* ViewController.swift */,
+				AB799A48273C609C000798F0 /* CustomTableViewCell.swift */,
+				AB799A49273C609C000798F0 /* CustomTableViewCell.xib */,
 				AB799A46273B6C23000798F0 /* Database.swift */,
 				AB799A1C273B69E7000798F0 /* Main.storyboard */,
 				AB799A1F273B69E8000798F0 /* Assets.xcassets */,
@@ -281,6 +287,7 @@
 			files = (
 				AB799A23273B69E8000798F0 /* LaunchScreen.storyboard in Resources */,
 				AB799A20273B69E8000798F0 /* Assets.xcassets in Resources */,
+				AB799A4B273C609C000798F0 /* CustomTableViewCell.xib in Resources */,
 				AB799A1E273B69E7000798F0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB799A1B273B69E7000798F0 /* ViewController.swift in Sources */,
+				AB799A4A273C609C000798F0 /* CustomTableViewCell.swift in Sources */,
 				AB799A17273B69E7000798F0 /* AppDelegate.swift in Sources */,
 				AB799A47273B6C23000798F0 /* Database.swift in Sources */,
 				AB799A19273B69E7000798F0 /* SceneDelegate.swift in Sources */,

@@ -11,7 +11,8 @@ import SQLite
 final class Database {
     
     private var db: Connection
-    private var userDataStore: UserDatastore
+    var userDataStore: UserDatastore
+    
     init() {
         let filePath = try! FileManager.default.url(for: .documentDirectory,
                                                        in: .userDomainMask,
@@ -53,9 +54,27 @@ final class UserDatastore {
         }
     }
     
-    func insert(name: String, email: String) throws {
+    private func insert(name: String, email: String) throws {
         let insert = table.insert(self.name <- name, self.email <- email)
         try db.run(insert)
     }
     
+    func find() -> [User] {
+        let users = try! db.prepare(table).map {
+            User(id: $0[id], name: $0[name], email: $0[email])
+        }
+        return users
+    }
+    
+}
+
+struct User {
+    let id: Int64
+    let name: String
+    let email: String
+    init(id: Int64, name: String, email: String) {
+        self.id = id
+        self.name = name
+        self.email = email
+    }
 }
