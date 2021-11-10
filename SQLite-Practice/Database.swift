@@ -11,20 +11,21 @@ import SQLite
 final class Database {
     
     private var db: Connection
-    private var userDataStore: UserDataStore
+    private var userDataStore: UserDatastore
     init() {
         let filePath = try! FileManager.default.url(for: .documentDirectory,
                                                        in: .userDomainMask,
                                                        appropriateFor: nil,
                                                        create: false)
             .appendingPathComponent("sample.db").path
+        try? FileManager.default.removeItem(atPath: filePath)
         db = try! Connection(filePath)
-        userDataStore = UserDataStore(db: db)
+        userDataStore = UserDatastore(db: db)
     }
     
 }
 
-final class UserDataStore {
+final class UserDatastore {
     
     private let table = Table("users")
     private let id = Expression<Int64>("id")
@@ -35,14 +36,26 @@ final class UserDataStore {
     init(db: Connection) {
         self.db = db
         do {
-            try db.run(table.create(block: { tableBuilder in
-                tableBuilder.column(Expression<Int64>("id"), primaryKey: true)
-                tableBuilder.column(Expression<String?>("name"))
-                tableBuilder.column(Expression<String>("email"), unique: true)
-            }))
+            try self.db.run(table.create { t in
+                t.column(Expression<Int64>("id"), primaryKey: true)
+                t.column(Expression<String>("name"))
+                t.column(Expression<String>("email"), unique: true)
+            })
+            let migrationItems = [
+                ["name": "REON", "email":"REON@mac.com"],
+                ["name": "REON2", "email":"REON2@mac.com"]
+            ]
+            migrationItems.forEach { row in
+                try? insert(name: row["name"]!, email: row["email"]!)
+            }
         } catch {
-            print("DEBUG_PRINT: ", error.localizedDescription)
+            
         }
+    }
+    
+    func insert(name: String, email: String) throws {
+        let insert = table.insert(self.name <- name, self.email <- email)
+        try db.run(insert)
     }
     
 }
